@@ -33,18 +33,18 @@ require([
       
       geocoder.on("select", showLocation);
 
-      function showLocation(evt) {
-        map.graphics.clear();
-        var point = evt.result.feature.geometry;
-        var symbol = new SimpleMarkerSymbol()
-          .setStyle("square")
-          .setColor(new Color([255,0,0,0.5]));
-        var graphic = new Graphic(point, symbol);
-        map.graphics.add(graphic);
+        function showLocation(evt) {
+          map.graphics.clear();
+          var point = evt.result.feature.geometry;
+          var symbol = new SimpleMarkerSymbol()
+            .setStyle("square")
+            .setColor(new Color([255,0,0,0.5]));
+          var graphic = new Graphic(point, symbol);
+          map.graphics.add(graphic);
 
-        map.infoWindow.setTitle("Search Result");
-        map.infoWindow.setContent(evt.result.name);
-        map.infoWindow.show(evt.result.feature.geometry);
-      };
+          map.infoWindow.setTitle("Search Result");
+          map.infoWindow.setContent(evt.result.name);
+          map.infoWindow.show(evt.result.feature.geometry);
+        };
     }
 );
